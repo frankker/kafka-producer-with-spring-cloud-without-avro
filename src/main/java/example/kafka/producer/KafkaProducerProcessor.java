@@ -1,31 +1,23 @@
-package hatanaka.example.kafka.producer;
+package example.kafka.producer;
 
-import hatanaka.example.kafka.consumer.UserSink2;
-import hatanaka.example.kafka.dto.AlertDto;
-import hatanaka.example.kafka.dto.AssetDto;
+import example.kafka.dto.AlertDto;
+import example.kafka.dto.AssetDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.messaging.Processor;
-import org.springframework.integration.config.EnableIntegration;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 @Service
+@EnableBinding(KafkaProcessor.class)
 //@EnableIntegration
 public class KafkaProducerProcessor {
 
   @Autowired
-  private UserSink2 processor;
+  private KafkaProcessor processor;
 
   public void produceAssetMessage(AssetDto assetDto2) {
-    /*AssetDto assetDto = new AssetDto();
-    assetDto.setId(assetDto2.getId());
-    assetDto.setName(assetDto2.getName());
-    Message<AssetDto> message = MessageBuilder
-        .withPayload(assetDto)
-        .setHeader(KafkaHeaders.MESSAGE_KEY, assetDto.getId())
-        .build();*/
     AlertDto alertDto = new AlertDto();
     alertDto.setId(3L);
     alertDto.setName("name");
@@ -40,10 +32,7 @@ public class KafkaProducerProcessor {
     processor.outEvent().send(message);
   }
 
-
   public void produceAlertDetails(long alertId, String topic, String name) {
-
-    // creating employee details
     AlertDto alertDto = new AlertDto();
     alertDto.setId(alertId);
     alertDto.setName(name);

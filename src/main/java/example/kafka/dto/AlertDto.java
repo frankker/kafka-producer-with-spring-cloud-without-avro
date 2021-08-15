@@ -3,11 +3,9 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package hatanaka.example.kafka.dto;
+package example.kafka.dto;
 
-import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
@@ -172,8 +170,8 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new AlertDto RecordBuilder.
    * @return A new AlertDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.AlertDto.Builder newBuilder() {
-    return new hatanaka.example.kafka.dto.AlertDto.Builder();
+  public static AlertDto.Builder newBuilder() {
+    return new AlertDto.Builder();
   }
 
   /**
@@ -181,11 +179,11 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new AlertDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.AlertDto.Builder newBuilder(hatanaka.example.kafka.dto.AlertDto.Builder other) {
+  public static AlertDto.Builder newBuilder(AlertDto.Builder other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.AlertDto.Builder();
+      return new AlertDto.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.AlertDto.Builder(other);
+      return new AlertDto.Builder(other);
     }
   }
 
@@ -194,11 +192,11 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new AlertDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.AlertDto.Builder newBuilder(hatanaka.example.kafka.dto.AlertDto other) {
+  public static AlertDto.Builder newBuilder(AlertDto other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.AlertDto.Builder();
+      return new AlertDto.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.AlertDto.Builder(other);
+      return new AlertDto.Builder(other);
     }
   }
 
@@ -222,7 +220,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.AlertDto.Builder other) {
+    private Builder(AlertDto.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -242,7 +240,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing AlertDto instance
      * @param other The existing instance to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.AlertDto other) {
+    private Builder(AlertDto other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -272,7 +270,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AlertDto.Builder setId(long value) {
+    public AlertDto.Builder setId(long value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -292,7 +290,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AlertDto.Builder clearId() {
+    public AlertDto.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -311,7 +309,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'topic'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AlertDto.Builder setTopic(java.lang.String value) {
+    public AlertDto.Builder setTopic(java.lang.String value) {
       validate(fields()[1], value);
       this.topic = value;
       fieldSetFlags()[1] = true;
@@ -331,7 +329,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'topic' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AlertDto.Builder clearTopic() {
+    public AlertDto.Builder clearTopic() {
       topic = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -351,7 +349,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AlertDto.Builder setName(java.lang.String value) {
+    public AlertDto.Builder setName(java.lang.String value) {
       validate(fields()[2], value);
       this.name = value;
       fieldSetFlags()[2] = true;
@@ -371,7 +369,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AlertDto.Builder clearName() {
+    public AlertDto.Builder clearName() {
       name = null;
       fieldSetFlags()[2] = false;
       return this;

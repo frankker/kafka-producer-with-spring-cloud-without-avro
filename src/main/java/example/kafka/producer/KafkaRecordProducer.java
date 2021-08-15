@@ -1,6 +1,6 @@
-package hatanaka.example.kafka.producer;
+package example.kafka.producer;
 
-import hatanaka.example.kafka.dto.AlertDto;
+import example.kafka.dto.AlertDto;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;

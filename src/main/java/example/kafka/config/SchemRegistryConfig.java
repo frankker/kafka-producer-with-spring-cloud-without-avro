@@ -1,4 +1,4 @@
-package hatanaka.example.kafka.config;
+package example.kafka.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.schema.client.ConfluentSchemaRegistryClient;

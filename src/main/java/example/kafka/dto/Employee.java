@@ -3,11 +3,9 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package hatanaka.example.kafka.dto;
+package example.kafka.dto;
 
-import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
@@ -172,8 +170,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new Employee RecordBuilder.
    * @return A new Employee RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.Employee.Builder newBuilder() {
-    return new hatanaka.example.kafka.dto.Employee.Builder();
+  public static Employee.Builder newBuilder() {
+    return new Employee.Builder();
   }
 
   /**
@@ -181,11 +179,11 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new Employee RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.Employee.Builder newBuilder(hatanaka.example.kafka.dto.Employee.Builder other) {
+  public static Employee.Builder newBuilder(Employee.Builder other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.Employee.Builder();
+      return new Employee.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.Employee.Builder(other);
+      return new Employee.Builder(other);
     }
   }
 
@@ -194,11 +192,11 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new Employee RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.Employee.Builder newBuilder(hatanaka.example.kafka.dto.Employee other) {
+  public static Employee.Builder newBuilder(Employee other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.Employee.Builder();
+      return new Employee.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.Employee.Builder(other);
+      return new Employee.Builder(other);
     }
   }
 
@@ -222,7 +220,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.Employee.Builder other) {
+    private Builder(Employee.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -242,7 +240,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Employee instance
      * @param other The existing instance to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.Employee other) {
+    private Builder(Employee other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -272,7 +270,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder setId(int value) {
+    public Employee.Builder setId(int value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -292,7 +290,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder clearId() {
+    public Employee.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -311,7 +309,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'topic'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder setTopic(java.lang.String value) {
+    public Employee.Builder setTopic(java.lang.String value) {
       validate(fields()[1], value);
       this.topic = value;
       fieldSetFlags()[1] = true;
@@ -331,7 +329,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'topic' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder clearTopic() {
+    public Employee.Builder clearTopic() {
       topic = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -351,7 +349,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder setName(java.lang.String value) {
+    public Employee.Builder setName(java.lang.String value) {
       validate(fields()[2], value);
       this.name = value;
       fieldSetFlags()[2] = true;
@@ -371,7 +369,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder clearName() {
+    public Employee.Builder clearName() {
       name = null;
       fieldSetFlags()[2] = false;
       return this;

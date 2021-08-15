@@ -3,11 +3,9 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package hatanaka.example.kafka.dto;
+package example.kafka.dto;
 
-import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
@@ -150,8 +148,8 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new AssetDto RecordBuilder.
    * @return A new AssetDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.AssetDto.Builder newBuilder() {
-    return new hatanaka.example.kafka.dto.AssetDto.Builder();
+  public static AssetDto.Builder newBuilder() {
+    return new AssetDto.Builder();
   }
 
   /**
@@ -159,11 +157,11 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new AssetDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.AssetDto.Builder newBuilder(hatanaka.example.kafka.dto.AssetDto.Builder other) {
+  public static AssetDto.Builder newBuilder(AssetDto.Builder other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.AssetDto.Builder();
+      return new AssetDto.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.AssetDto.Builder(other);
+      return new AssetDto.Builder(other);
     }
   }
 
@@ -172,11 +170,11 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new AssetDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.AssetDto.Builder newBuilder(hatanaka.example.kafka.dto.AssetDto other) {
+  public static AssetDto.Builder newBuilder(AssetDto other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.AssetDto.Builder();
+      return new AssetDto.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.AssetDto.Builder(other);
+      return new AssetDto.Builder(other);
     }
   }
 
@@ -199,7 +197,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.AssetDto.Builder other) {
+    private Builder(AssetDto.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -215,7 +213,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing AssetDto instance
      * @param other The existing instance to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.AssetDto other) {
+    private Builder(AssetDto other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -241,7 +239,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AssetDto.Builder setId(long value) {
+    public AssetDto.Builder setId(long value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -261,7 +259,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AssetDto.Builder clearId() {
+    public AssetDto.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -280,7 +278,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AssetDto.Builder setName(java.lang.String value) {
+    public AssetDto.Builder setName(java.lang.String value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -300,7 +298,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.AssetDto.Builder clearName() {
+    public AssetDto.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
