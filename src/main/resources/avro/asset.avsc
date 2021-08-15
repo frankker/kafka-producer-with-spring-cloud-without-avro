@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "AssetDto",
+  "namespace": "hatanaka.example.kafka.dto",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    }]
+}

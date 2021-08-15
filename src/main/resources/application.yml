@@ -1,0 +1,50 @@
+server:
+  port: 8099
+spring:
+  cloud:
+    schemaRegistryClient:
+      endpoint: http://localhost:8081
+    stream:
+      default:
+        producer:
+          useNativeEncoding: true
+        consumer:
+          useNativeEncoding: true
+      bindings:
+#        alert-input:
+#          destination: alert7
+#          content-type: application/*+avro
+#          group: group-2
+#          concurrency: 3
+#          binder: kafka
+        alert-output:
+          destination: alert7
+          content-type: application/*+avro
+          binder: kafka
+      #        asset-input2:
+      #          destination: asset4
+      #          content-type: application/*+avro
+      #          group: consumer_group
+      #          concurrency: 5
+      #        asset-output2:
+      #          destination: asset4
+      #          content-type: application/*+avro
+      #        output:
+      #          destination: reflectoring5
+      #          content-type: application/*+avrob
+      kafka:
+        binder:
+          brokers: localhost:9092
+          configuration:
+            value:
+              deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+              serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+          producer-properties:
+            key.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+            value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+            schema.registry.url: http://localhost:8081
+          consumer-properties:
+            key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            schema.registry.url: http://localhost:8081
+            specific.avro.reader: true
