@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "Employee",
-  "namespace": "hatanaka.example.kafka.dto",
+  "namespace": "example.kafka.dto",
   "fields": [
     {
       "name": "id",

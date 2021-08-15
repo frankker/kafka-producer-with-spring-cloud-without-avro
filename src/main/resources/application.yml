@@ -18,7 +18,7 @@ spring:
 #          concurrency: 3
 #          binder: kafka
         alert-output:
-          destination: alert7
+          destination: alert10
           content-type: application/*+avro
           binder: kafka
       #        asset-input2:

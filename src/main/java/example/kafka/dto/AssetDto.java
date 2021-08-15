@@ -5,15 +5,17 @@
  */
 package example.kafka.dto;
 
+import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
+import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6191048673975249827L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AssetDto\",\"namespace\":\"hatanaka.example.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  private static final long serialVersionUID = -4295282958876975741L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AssetDto\",\"namespace\":\"example.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -148,8 +150,8 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new AssetDto RecordBuilder.
    * @return A new AssetDto RecordBuilder
    */
-  public static AssetDto.Builder newBuilder() {
-    return new AssetDto.Builder();
+  public static example.kafka.dto.AssetDto.Builder newBuilder() {
+    return new example.kafka.dto.AssetDto.Builder();
   }
 
   /**
@@ -157,11 +159,11 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new AssetDto RecordBuilder
    */
-  public static AssetDto.Builder newBuilder(AssetDto.Builder other) {
+  public static example.kafka.dto.AssetDto.Builder newBuilder(example.kafka.dto.AssetDto.Builder other) {
     if (other == null) {
-      return new AssetDto.Builder();
+      return new example.kafka.dto.AssetDto.Builder();
     } else {
-      return new AssetDto.Builder(other);
+      return new example.kafka.dto.AssetDto.Builder(other);
     }
   }
 
@@ -170,11 +172,11 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new AssetDto RecordBuilder
    */
-  public static AssetDto.Builder newBuilder(AssetDto other) {
+  public static example.kafka.dto.AssetDto.Builder newBuilder(example.kafka.dto.AssetDto other) {
     if (other == null) {
-      return new AssetDto.Builder();
+      return new example.kafka.dto.AssetDto.Builder();
     } else {
-      return new AssetDto.Builder(other);
+      return new example.kafka.dto.AssetDto.Builder(other);
     }
   }
 
@@ -197,7 +199,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(AssetDto.Builder other) {
+    private Builder(example.kafka.dto.AssetDto.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -213,7 +215,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing AssetDto instance
      * @param other The existing instance to copy.
      */
-    private Builder(AssetDto other) {
+    private Builder(example.kafka.dto.AssetDto other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -239,7 +241,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public AssetDto.Builder setId(long value) {
+    public example.kafka.dto.AssetDto.Builder setId(long value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -259,7 +261,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public AssetDto.Builder clearId() {
+    public example.kafka.dto.AssetDto.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -278,7 +280,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public AssetDto.Builder setName(java.lang.String value) {
+    public example.kafka.dto.AssetDto.Builder setName(java.lang.String value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -298,7 +300,7 @@ public class AssetDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public AssetDto.Builder clearName() {
+    public example.kafka.dto.AssetDto.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;

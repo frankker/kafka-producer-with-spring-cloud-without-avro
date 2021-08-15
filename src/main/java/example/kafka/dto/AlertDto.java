@@ -5,15 +5,17 @@
  */
 package example.kafka.dto;
 
+import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
+import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 2333217149026486555L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AlertDto\",\"namespace\":\"hatanaka.example.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"topic\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  private static final long serialVersionUID = -3633436097619681495L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AlertDto\",\"namespace\":\"example.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"topic\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -170,8 +172,8 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new AlertDto RecordBuilder.
    * @return A new AlertDto RecordBuilder
    */
-  public static AlertDto.Builder newBuilder() {
-    return new AlertDto.Builder();
+  public static example.kafka.dto.AlertDto.Builder newBuilder() {
+    return new example.kafka.dto.AlertDto.Builder();
   }
 
   /**
@@ -179,11 +181,11 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new AlertDto RecordBuilder
    */
-  public static AlertDto.Builder newBuilder(AlertDto.Builder other) {
+  public static example.kafka.dto.AlertDto.Builder newBuilder(example.kafka.dto.AlertDto.Builder other) {
     if (other == null) {
-      return new AlertDto.Builder();
+      return new example.kafka.dto.AlertDto.Builder();
     } else {
-      return new AlertDto.Builder(other);
+      return new example.kafka.dto.AlertDto.Builder(other);
     }
   }
 
@@ -192,11 +194,11 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new AlertDto RecordBuilder
    */
-  public static AlertDto.Builder newBuilder(AlertDto other) {
+  public static example.kafka.dto.AlertDto.Builder newBuilder(example.kafka.dto.AlertDto other) {
     if (other == null) {
-      return new AlertDto.Builder();
+      return new example.kafka.dto.AlertDto.Builder();
     } else {
-      return new AlertDto.Builder(other);
+      return new example.kafka.dto.AlertDto.Builder(other);
     }
   }
 
@@ -220,7 +222,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(AlertDto.Builder other) {
+    private Builder(example.kafka.dto.AlertDto.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -240,7 +242,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing AlertDto instance
      * @param other The existing instance to copy.
      */
-    private Builder(AlertDto other) {
+    private Builder(example.kafka.dto.AlertDto other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -270,7 +272,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public AlertDto.Builder setId(long value) {
+    public example.kafka.dto.AlertDto.Builder setId(long value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -290,7 +292,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public AlertDto.Builder clearId() {
+    public example.kafka.dto.AlertDto.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -309,7 +311,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'topic'.
       * @return This builder.
       */
-    public AlertDto.Builder setTopic(java.lang.String value) {
+    public example.kafka.dto.AlertDto.Builder setTopic(java.lang.String value) {
       validate(fields()[1], value);
       this.topic = value;
       fieldSetFlags()[1] = true;
@@ -329,7 +331,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'topic' field.
       * @return This builder.
       */
-    public AlertDto.Builder clearTopic() {
+    public example.kafka.dto.AlertDto.Builder clearTopic() {
       topic = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -349,7 +351,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public AlertDto.Builder setName(java.lang.String value) {
+    public example.kafka.dto.AlertDto.Builder setName(java.lang.String value) {
       validate(fields()[2], value);
       this.name = value;
       fieldSetFlags()[2] = true;
@@ -369,7 +371,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public AlertDto.Builder clearName() {
+    public example.kafka.dto.AlertDto.Builder clearName() {
       name = null;
       fieldSetFlags()[2] = false;
       return this;
