@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'example.kafka'
+rootProject.name = 'Kafka Producer Without Avro'

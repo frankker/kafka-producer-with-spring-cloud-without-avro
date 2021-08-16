@@ -1,6 +1,7 @@
 package example.kafka.producer;
 
-import example.kafka.dto.AlertDto;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import example.kafka.dto.AssetDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -17,34 +18,20 @@ public class KafkaProducerProcessor {
   @Autowired
   private KafkaProcessor processor;
 
-  public void produceAssetMessage(AssetDto assetDto2) {
-    AlertDto alertDto = new AlertDto();
-    alertDto.setId(3L);
-    alertDto.setName("name");
-    alertDto.setTopic("asset4");
-
-    Message<AlertDto> message =
+  public void produceAssetMessage(AssetDto assetDto) {
+    String assetDtoString = "";
+    ObjectMapper mapper = new ObjectMapper();
+    try {
+      assetDtoString = mapper.writeValueAsString(assetDto);
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+    }
+    Message<String> message =
         MessageBuilder
-            .withPayload(alertDto)
-            .setHeader(KafkaHeaders.MESSAGE_KEY, 3L)
+            .withPayload(assetDtoString)
+            .setHeader(KafkaHeaders.MESSAGE_KEY, assetDto.getId())
             .build();
 
-    processor.outEvent().send(message);
-  }
-
-  public void produceAlertDetails(long alertId, String topic, String name) {
-    AlertDto alertDto = new AlertDto();
-    alertDto.setId(alertId);
-    alertDto.setName(name);
-    alertDto.setTopic(topic);
-
-    Message<AlertDto> message =
-        MessageBuilder
-            .withPayload(alertDto)
-            .setHeader(KafkaHeaders.MESSAGE_KEY, alertId)
-            .build();
-
-    processor.outEvent()
-        .send(message);
+    processor.assetEventSending().send(message);
   }
 }
