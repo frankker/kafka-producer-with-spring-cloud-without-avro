@@ -15,16 +15,14 @@ spring:
           destination: alert10
           binder: kafka
         asset-output:
-          destination: asset002
+          destination: asset003
           binder: kafka
       kafka:
         binder:
+          autoAddPartitions: true
           brokers: localhost:9092
-          configuration:
-            value:
-              deserializer: org.apache.kafka.common.serialization.StringDeserializer
-              serializer: org.apache.kafka.common.serialization.StringSerializer
           producer-properties:
+            partition-count: 2
             key.serializer: org.apache.kafka.common.serialization.LongSerializer
             value.serializer: org.apache.kafka.common.serialization.StringSerializer
           consumer-properties:
